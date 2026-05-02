@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Bakery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+html {
+  scroll-behavior: smooth;
+}
+</style>
+
+</head>
+
+
+<body  class="bg-pink-50">
+
+  <!-- NAVBAR -->
+<nav id="home" class="flex justify-between items-center px-8 py-4 bg-white shadow-md">
+
+  <!-- LOGO -->
+  <h1 class="text-2xl font-bold text-pink-600">🍰 Bakery</h1>
+
+  <!-- MENU -->
+  <div class="flex items-center gap-6 relative">
+
+    <a href="#home" class="text-gray-700 hover:text-pink-600">Home</a>
+    <a href="#about" class="text-gray-700 hover:text-pink-600">About</a>
+    <a href="#products" class="text-gray-700 hover:text-pink-600">Products</a>
+    <a href="#reviews" class="text-gray-700 hover:text-pink-600">Reviews</a>
+    <a href="#contact" class="text-gray-700 hover:text-pink-600">Contact</a>
+
+    <!-- VIEW MENU BUTTON -->
+    <div class="relative">
+      <button onclick="toggleMenu()" 
+        class="px-4 py-2 rounded-full border border-pink-600 text-pink-600 
+               hover:bg-pink-600 hover:text-white transition">
+        View Menu
+      </button>
+
+      <!-- DROPDOWN -->
+      <div id="menuDropdown" 
+        class="hidden absolute right-0 mt-3 w-72 bg-white rounded-xl shadow-lg p-4 space-y-3 z-50">
+
+        <div class="border-b pb-2">
+          <h3 class="font-semibold">🍫 Chocolate Cake</h3>
+          <p class="text-sm text-gray-500">Rs. 1200</p>
+        </div>
+
+        <div class="border-b pb-2">
+          <h3 class="font-semibold">🎂 Vanilla Cake</h3>
+          <p class="text-sm text-gray-500">Rs. 1100</p>
+        </div>
+
+        <div class="border-b pb-2">
+          <h3 class="font-semibold">🍓 Strawberry Cake</h3>
+          <p class="text-sm text-gray-500">Rs. 1300</p>
+        </div>
+
+        <div class="border-b pb-2">
+          <h3 class="font-semibold">🧁 Cupcakes</h3>
+          <p class="text-sm text-gray-500">Rs. 300</p>
+        </div>
+
+        <div class="border-b pb-2">
+          <h3 class="font-semibold">🥐 Croissant</h3>
+          <p class="text-sm text-gray-500">Rs. 250</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold">🍞 Fresh Bread</h3>
+          <p class="text-sm text-gray-500">Rs. 150</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+  <!-- Hero section -->
+  <section  class="bg-gradient-to-r from-pink-100 to-yellow-50 py-16 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col items-center text-center gap-10">
+
+      <!-- TEXT -->
+      <div class="max-w-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold text-pink-600">
+          Fresh Bakery Delights 🍰
+        </h1>
+
+        <p class="mt-4 text-gray-600 text-lg">
+          Soft cakes, fresh pastries & sweet moments made with love every day.
+        </p>
+
+        <!-- BUTTON BOX -->
+        <div class="mt-6 bg-white/30 backdrop-blur-md border border-white/40 
+                  rounded-2xl p-3 flex gap-4 justify-center w-fit mx-auto shadow-md">
+
+          <button onclick="startOrder()" class="px-5 py-2 rounded-full bg-pink-600 text-white font-semibold 
+                 hover:bg-pink-700 transition">
+            Order Now
+          </button>
+<div class="relative inline-block">
+
+  <!-- BUTTON -->
+  <div class="relative inline-block">
+
+  <!-- DROPDOWN MENU -->
+  <div id="menuDropdown" 
+       class="hidden absolute left-0 mt-3 w-72 bg-white rounded-xl shadow-lg p-4 space-y-3 z-50">
+
+    <!-- Cakes -->
+    <div class="border-b pb-2">
+      <h3 class="font-semibold">🍫 Chocolate Cake</h3>
+      <p class="text-sm text-gray-500">Rs. 1200</p>
+    </div>
+
+    <div class="border-b pb-2">
+      <h3 class="font-semibold">🎂 Vanilla Cake</h3>
+      <p class="text-sm text-gray-500">Rs. 1100</p>
+    </div>
+
+    <div class="border-b pb-2">
+      <h3 class="font-semibold">🍓 Strawberry Cake</h3>
+      <p class="text-sm text-gray-500">Rs. 1300</p>
+    </div>
+
+    <!-- Cupcakes -->
+    <div class="border-b pb-2">
+      <h3 class="font-semibold">🧁 Cupcakes</h3>
+      <p class="text-sm text-gray-500">Rs. 300</p>
+    </div>
+
+    <!-- Pastries -->
+    <div class="border-b pb-2">
+      <h3 class="font-semibold">🥐 Croissant</h3>
+      <p class="text-sm text-gray-500">Rs. 250</p>
+    </div>
+
+    <div class="border-b pb-2">
+      <h3 class="font-semibold">🍩 Donuts</h3>
+      <p class="text-sm text-gray-500">Rs. 200</p>
+    </div>
+
+    <!-- Bread -->
+    <div>
+      <h3 class="font-semibold">🍞 Fresh Bread</h3>
+      <p class="text-sm text-gray-500">Rs. 150</p>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+        </div>
+
+        <div id="status" class="mt-5 text-pink-700 font-semibold hidden"></div>
+
+        <div id="steps" class="mt-3 text-gray-700 hidden space-y-1">
+          <p id="s1">🧁 Mixing ingredients...</p>
+          <p id="s2">🔥 Baking in oven...</p>
+          <p id="s3">🎂 Final touches...</p>
+        </div>
+      </div>
+<!-- Next to product -->
+    <div class="nav-btns">
+    <a href="#products">Next ➜ Products</a>
+  </div>
+
+
+
+    </div>
+  </section>
+
+  <!-- IMAGE -->
+  <!-- <div class="md:w-1/2 flex justify-center">
+      <img 
+        src="https://cdn.pixabay.com/photo/2017/12/09/08/18/cake-3003690_1280.jpg"
+        class="w-72 md:w-96 rounded-2xl shadow-xl animate-bounce"
+        alt="cake"
+      />
+    </div> -->
+
+  </div>
+  </section>
+
+  <section id="menu" class=" hidden  px-6 bg-pink-50">
+
+    <h2 class="text-3xl font-bold text-center text-pink-600 mb-10">
+      🍰 Our Sweet Menu
+    </h2>
+
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+
+      <!-- ITEM 1 -->
+      <div class="bg-white rounded-2xl shadow-md p-4 hover:scale-105 transition">
+        <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/cake-1239286_1280.jpg" class="rounded-xl mb-4"
+          alt="cake">
+        <h3 class="text-xl font-semibold text-gray-800">Chocolate Cake</h3>
+        <p class="text-gray-500 text-sm">Rich & creamy chocolate delight</p>
+        <p class="text-pink-600 font-bold mt-2">Rs. 1200</p>
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="bg-white rounded-2xl shadow-md p-4 hover:scale-105 transition">
+        <img src="https://cdn.pixabay.com/photo/2017/05/07/08/56/cupcakes-2290337_1280.jpg" class="rounded-xl mb-4"
+          alt="cupcake">
+        <h3 class="text-xl font-semibold text-gray-800">Cupcakes</h3>
+        <p class="text-gray-500 text-sm">Soft & fluffy mini treats</p>
+        <p class="text-pink-600 font-bold mt-2">Rs. 300</p>
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="bg-white rounded-2xl shadow-md p-4 hover:scale-105 transition">
+        <img src="https://cdn.pixabay.com/photo/2017/01/28/02/52/bread-2012103_1280.jpg" class="rounded-xl mb-4"
+          alt="bread">
+        <h3 class="text-xl font-semibold text-gray-800">Fresh Bread</h3>
+        <p class="text-gray-500 text-sm">Daily baked fresh bread</p>
+        <p class="text-pink-600 font-bold mt-2">Rs. 150</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Special Items -->
+  <section class="p-10 bg-pink-100">
+    <h2 class="text-3xl font-bold text-center mb-8">⭐ Special Items</h2>
+
+    <div class="grid md:grid-cols-4 gap-6">
+
+      <div class="bg-white p-4 rounded shadow text-center hover:scale-105 transition duration-300">
+        <img src="https://images.unsplash.com/photo-1670529774874-601ce26eec53?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHdlZGRpbmclMjBjYWtlfGVufDB8fDB8fHww" class="rounded" >
+        <h3 class="font-bold mt-2">Wedding Cakes</h3>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow text-center hover:scale-105 transition duration-300">
+        <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f" class="rounded">
+        <h3 class="font-bold mt-2">Custom Designer Cakes</h3>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow text-center hover:scale-105 transition duration-300">
+        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307" class="rounded">
+        <h3 class="font-bold mt-2">Ice Cream Cakes</h3>
+      </div>
+     <div class="bg-white p-4 rounded shadow text-center hover:scale-105 transition duration-300">
+        <img src="https://preppykitchen.com/wp-content/uploads/2026/02/moist-vanilla-cupcake-recipe-feature-1084x1536.jpg" class="rounded" >
+        <h3 class="font-bold mt-2">Vanilla Cupcakes</h3>
+      </div>
+   <!-- ⬅ Previous Products
+    Next ➜ About -->
+
+     <div class="nav-btns">
+    <a href="#products">⬅ Previous Products</a>
+    <a href="#about">Next ➜ About</a>
+  </div>
+   <!-- ⬅ Previous Special
+   Next ➜ Contac -->
+   <div class="nav-btns">
+    <a href="#special">⬅ Previous Special</a>
+    <a href="#contact">Next ➜ Contact</a>
+  </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="p-10">
+    <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
+
+    <div class="grid md:grid-cols-4 gap-6">
+
+      <!-- Cakes -->
+      <div class="bg-white p-4 rounded shadow text-center">
+        <img class="rounded" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+        <h3 class="font-bold mt-2">Cakes</h3>
+        <p>Chocolate, Vanilla, Birthday Cakes</p>
+      </div>
+
+      <!-- Pastries -->
+      <div class="bg-white p-4 rounded shadow text-center">
+        <img class="rounded" src="https://images.unsplash.com/photo-1551024601-bec78aea704b">
+        <h3 class="font-bold mt-2">Pastries</h3>
+        <p>Strawberry, Pineapple, Chocolate</p>
+      </div>
+
+      <!-- Bread -->
+      <div class="bg-white p-4 rounded shadow text-center">
+        <img class="rounded" src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec">
+        <h3 class="font-bold mt-2">Fresh Bread</h3>
+        <p>Brown, White, Garlic Bread</p>
+      </div>
+
+      <!-- Snacks -->
+      <div class="bg-white p-4 rounded shadow text-center">
+        <img class="rounded" src="image.png">
+        <h3 class="font-bold mt-2">Snacks</h3>
+        <p>Cookies, Donuts, Biscuits</p>
+      </div>
+  <!-- Previous Home
+  Next ➜ Special Items -->
+       <div class="nav-btns">
+    <a href="#home">⬅ Previous Home</a>
+    <a href="#special">Next ➜ Special Items</a>
+  </div>
+
+    </div>
+  </section>
+
+  <!-- Baking process video -->
+  <section class="p-10">
+    <h2 class="text-3xl font-bold text-center mb-6">Our Baking Process</h2>
+
+<div class="max-w-4xl mx-auto">
+  <video controls class="w-full h-[450px] object-contain rounded shadow">
+    <source src="bakingvideo.mp4" type="video/mp4">
+  </video>
+</div>
+
+    <p class="text-center mt-4 text-gray-600">
+      We maintain high hygiene standards in our bakery 🍰
+    </p>
+  </section>
+
+  <!-- CUSTOM ORDER FORM -->
+  <section id="order" class="p-10 bg-white">
+    <h2 class="text-3xl font-bold text-center mb-6">Custom Cake Order</h2>
+
+    <form class="max-w-xl mx-auto space-y-4">
+
+      <input class="w-full p-3 border rounded" type="text" placeholder="Your Name">
+      <input class="w-full p-3 border rounded" type="email" placeholder="Email">
+      <input class="w-full p-3 border rounded" type="text" placeholder="Phone">
+
+      <select class="w-full p-3 border rounded">
+        <option>Select Cake Flavor</option>
+        <option>Chocolate</option>
+        <option>Vanilla</option>
+        <option>Strawberry</option>
+      </select>
+
+      <select class="w-full p-3 border rounded">
+        <option>Select Cake Size</option>
+        <option>1 Pound</option>
+        <option>2 Pound</option>
+        <option>3 Pound</option>
+      </select>
+
+      <input class="w-full p-3 border rounded" type="date">
+
+      <textarea class="w-full p-3 border rounded" placeholder="Custom Message"></textarea>
+
+      <button class="w-full bg-pink-600 text-white p-3 rounded hover:bg-pink-700">
+        Submit Order
+      </button>
+
+    </form>
+  </section>
+<!-- About -->
+  <section id="about" style="padding:50px; text-align:center; background:#fff3e0;">
+  <h2 class="font-bold font-size-400">About Us</h2>
+  <p style="max-width:700px; margin:auto; font-size:18px; line-height:1.6;">
+    Welcome to our bakery! We are passionate about baking fresh, delicious and high-quality items every day.
+    From cakes to pastries, everything is made with love and care. Our goal is to bring happiness in every bite.
+  </p>
+</section>
+
+  <!-- RESULTS / REVIEWS -->
+  <section id="reviews" class="p-10">
+    <h2 class="text-3xl font-bold text-center mb-6">Customer Reviews</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="bg-white p-4 rounded shadow text-center">
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>"Best cakes ever!"</p>
+        <h4 class="font-bold mt-2">Ali</h4>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow text-center">
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>"Very fresh & tasty"</p>
+        <h4 class="font-bold mt-2">Sara</h4>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow text-center">
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>"Amazing service"</p>
+        <h4 class="font-bold mt-2">Ahmed</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="p-10 text-center bg-pink-100">
+    <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+    <p>📍 Lahore, Pakistan</p>
+    <p>📞 0300-1234567</p>
+    <p>📧 bakery@gmail.com</p>
+    <!-- ⬅ Previous Abou -->
+    <div class="nav-btns">
+    <a href="#about">⬅ Previous About</a>
+  </div>
+  </section>
+
+
+
+  <!-- FOOTER -->
+  <footer class="bg-pink-600 text-white text-center p-4">
+    © 2026 Sweet Bakery
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function startOrder() {
+      const status = document.getElementById("status");
+      const steps = document.getElementById("steps");
+
+      status.classList.remove("hidden");
+      steps.classList.remove("hidden");
+
+      status.innerText = "🍰 Preparing your order...";
+
+      // Reset
+      document.getElementById("s1").style.opacity = "0.3";
+      document.getElementById("s2").style.opacity = "0.3";
+      document.getElementById("s3").style.opacity = "0.3";
+
+      // Promise-like animation sequence
+      setTimeout(() => {
+        document.getElementById("s1").style.opacity = "1";
+      }, 800);
+
+      setTimeout(() => {
+        document.getElementById("s2").style.opacity = "1";
+      }, 2000);
+
+      setTimeout(() => {
+        document.getElementById("s3").style.opacity = "1";
+      }, 3200);
+
+      setTimeout(() => {
+        status.innerText = "🎉 Your cake is ready!";
+      }, 4500);
+    }
+   function toggleMenu() {
+  const menu = document.getElementById("menuDropdown");
+  menu.classList.toggle("hidden");
+}
+   
+function toggleMenu() {
+  const menu = document.getElementById("menuDropdown");
+  menu.classList.toggle("hidden");
+}
+
+  </script>
+
+</body>
+
+</html>
